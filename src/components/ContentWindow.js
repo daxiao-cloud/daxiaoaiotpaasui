@@ -1,5 +1,6 @@
 import { Box, Heading, List, Text, Button } from 'grommet';
 import { Apps, Configure } from 'grommet-icons';
+import Link from 'next/link';
 
 const data = [
   { name: 'test0', appid: '12341234', desc: '测试app0' },
@@ -18,7 +19,9 @@ export function ContentWindow() {
             <Text weight='bold'>{datum.name}</Text>
             <Text>{datum.appid}</Text>
             <Text>{datum.desc}</Text>
-            <Button icon={<Configure />} href='/deviceProjects' />
+            <Link href='/deviceProjects'>
+              <Button icon={<Configure />} />
+            </Link>
           </Box>
         )}
       </List>
