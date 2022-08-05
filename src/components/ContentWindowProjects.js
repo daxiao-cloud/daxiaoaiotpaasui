@@ -21,7 +21,7 @@ export function ContentWindowProjects() {
             <Text weight='bold'>{datum.name}</Text>
             <Text>{datum.appid}</Text>
             <Text>{datum.desc}</Text>
-            <Button icon={<Configure />} href={`/${process.env.NEXT_PUBLIC_ANALYTICS_ID}/deviceProjectDetail`} />
+            <Button icon={<Configure />} href='/deviceProjectDetail' />
           </Box>
         )}
       </List>
