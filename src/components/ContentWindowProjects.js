@@ -27,7 +27,7 @@ export function ContentWindowProjects() {
             <Link href='/deviceProjectSetting'>
               <Button icon={<Configure />} />
             </Link>
-            <Link href='/deviceProjectDetail'>
+            <Link href='/deviceGroups'>
               <Button icon={<LinkNext />} />
             </Link>
           </Box>

@@ -6,7 +6,7 @@ export function ContentWindowDeviceGroupSetting() {
   return (
     <Box margin='small' flex overflow='auto' gap='medium'>
       <Box direction='row' align='center' gap='small'>
-        <Link href='/deviceProjectDetail'>
+        <Link href='/deviceGroups'>
           <Button icon={<LinkPrevious />} />
         </Link>
         <Heading margin='none'>设备管理中台 - 设备组设置</Heading>

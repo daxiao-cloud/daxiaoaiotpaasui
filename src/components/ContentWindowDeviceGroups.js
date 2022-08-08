@@ -8,7 +8,7 @@ const data = [
   { name: 'deviceGroup1', desc: '金乌3号' },
 ];
 
-export function ContentWindowProjectDetail() {
+export function ContentWindowDeviceGroups() {
   return (
     <Box margin='small' flex overflow='auto' gap='medium'>
       <Box direction='row' align='center' gap='small'>
