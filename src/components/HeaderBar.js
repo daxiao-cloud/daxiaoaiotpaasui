@@ -6,7 +6,7 @@ import { SidebarWindow } from './SidebarWindow';
 export function HeaderBar() {
   return (
     <Header background='brand' pad='small'>
-      <Box direction='row' gap='small' align='center'>
+      <Box direction='row' gap='medium' align='center'>
         <DropButton
           dropContent={<SidebarWindow />}
           dropAlign={{ top: 'bottom', left: 'left' }}
