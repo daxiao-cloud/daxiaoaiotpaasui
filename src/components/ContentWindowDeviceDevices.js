@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export function ContentWindowDeviceDevices() {
   return (
-    <Box margin='small' flex={false} overflow='auto' gap='medium'>
+    <Box margin='small' overflow='auto' gap='medium'>
       <Box direction='row' align='center' gap='small'>
         <Link href='/deviceGroups'>
           <Button icon={<LinkPrevious />} />

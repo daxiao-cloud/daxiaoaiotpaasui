@@ -4,27 +4,33 @@ import Link from 'next/link';
 
 const data = [
   { name: 'test0', appid: '12341234', desc: '测试app0' },
-  { name: 'test1', appid: '12341234', desc: '测试app1' },
-  { name: 'test1', appid: '12341234', desc: '测试app1' },
+  { name: 'test11111', appid: '12341234', desc: '测试app11' },
+  { name: 'a', appid: '12341234', desc: '测试app1234' },
 ];
 
 export function ContentWindowApps() {
   return (
-    <Box margin='small' flex overflow='auto' gap='medium'>
+    <Box margin='small' overflow='auto' gap='medium'>
       <Heading margin='none'>设备管理中台 - 应用</Heading>
       <List data={data}>
         {(datum) => (
-          <Box direction='row' gap='small' justify='between' align='center'>
-            <Apps />
-            <Text weight='bold'>{datum.name}</Text>
+          <Box direction='row' gap='small' align='center'>
+            <Box direction='row' gap='small' align='center' width='medium'>
+              <Apps />
+              <Text weight='bold'>{datum.name}</Text>
+            </Box>
             <Text>{datum.appid}</Text>
-            <Text>{datum.desc}</Text>
-            <Link href='/deviceAppSetting'>
-              <Button icon={<Configure />} />
-            </Link>
-            <Link href='/deviceProjects'>
-              <Button icon={<LinkNext />} />
-            </Link>
+            <Box flex>
+              <Text>{datum.desc}</Text>
+            </Box>
+            <Box direction='row' gap='small' align='center'>
+              <Link href='/deviceAppSetting'>
+                <Button icon={<Configure />} />
+              </Link>
+              <Link href='/deviceProjects'>
+                <Button icon={<LinkNext />} />
+              </Link>
+            </Box>
           </Box>
         )}
       </List>

@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 const data = [
   { name: 'testproj0', appid: '12341234', desc: '测试project0' },
-  { name: 'testproj1', appid: '12341234', desc: '测试project1' },
-  { name: 'testproj1', appid: '12341234', desc: '测试project2' },
+  { name: 'testproj1111', appid: '12341234', desc: '测试project1' },
+  { name: 'abc', appid: '12341234', desc: '测试project2' },
 ];
 
 export function ContentWindowProjects() {
@@ -19,17 +19,23 @@ export function ContentWindowProjects() {
       </Box>
       <List data={data}>
         {(datum) => (
-          <Box direction='row' gap='small' justify='between' align='center'>
-            <Projects />
-            <Text weight='bold'>{datum.name}</Text>
+          <Box direction='row' gap='small' align='center'>
+            <Box direction='row' gap='small' align='center' width='medium'>
+              <Projects />
+              <Text weight='bold'>{datum.name}</Text>
+            </Box>
             <Text>{datum.appid}</Text>
-            <Text>{datum.desc}</Text>
-            <Link href='/deviceProjectSetting'>
-              <Button icon={<Configure />} />
-            </Link>
-            <Link href='/deviceGroups'>
-              <Button icon={<LinkNext />} />
-            </Link>
+            <Box flex>
+              <Text>{datum.desc}</Text>
+            </Box>
+            <Box direction='row' gap='small' align='center'>
+              <Link href='/deviceProjectSetting'>
+                <Button icon={<Configure />} />
+              </Link>
+              <Link href='/deviceGroups'>
+                <Button icon={<LinkNext />} />
+              </Link>
+            </Box>
           </Box>
         )}
       </List>

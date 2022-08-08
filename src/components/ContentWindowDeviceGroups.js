@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 const data = [
   { name: 'deviceGroup0', desc: '金乌1号' },
-  { name: 'deviceGroup1', desc: '金乌2号' },
-  { name: 'deviceGroup1', desc: '金乌3号' },
+  { name: 'deviceGroup1111111', desc: '金乌2号' },
+  { name: 'abc', desc: '金乌3号, 用来测试用来测试。' },
 ];
 
 export function ContentWindowDeviceGroups() {
@@ -19,10 +19,14 @@ export function ContentWindowDeviceGroups() {
       </Box>
       <List data={data}>
         {(datum) => (
-          <Box direction='row' gap='small' justify='between' align='center'>
-            <Device />
-            <Text weight='bold'>{datum.name}</Text>
-            <Text>{datum.desc}</Text>
+          <Box direction='row' gap='small' align='center'>
+            <Box direction='row' gap='small' align='center' width='medium'>
+              <Device />
+              <Text weight='bold'>{datum.name}</Text>
+            </Box>
+            <Box flex>
+              <Text>{datum.desc}</Text>
+            </Box>
             <Link href='/deviceGroupSetting'>
               <Button icon={<Configure />} />
             </Link>
