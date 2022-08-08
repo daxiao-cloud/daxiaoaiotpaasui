@@ -17,10 +17,12 @@ export function ContentWindowDeviceDevices() {
           header: <Text>SN</Text>,
           primary: true,
           render: datum => (
-            <Box direction='row' align='center' gap='small'>
-              <Video color={datum.online ? 'brand' : 'plain'} />
-              <Text color={datum.online ? 'brand' : 'plain'} weight='bold'>{datum.sn}</Text>
-            </Box>
+            <Link href='/deviceInfo'>
+              <Box direction='row' align='center' gap='small'>
+                <Video color={datum.online ? 'brand' : 'plain'} />
+                <Text color={datum.online ? 'brand' : 'plain'} weight='bold'>{datum.sn}</Text>
+              </Box>
+            </Link>
           )
         }, {
           property: 'usn',
