@@ -1,5 +1,4 @@
 import { Box, Anchor, Sidebar, Accordion, AccordionPanel } from 'grommet';
-import { CameraCheckBox } from './CameraCheckBox';
 
 export function SidebarWindow() {
   return (

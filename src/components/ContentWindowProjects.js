@@ -1,5 +1,5 @@
 import { Box, Heading, List, Text, Button } from 'grommet';
-import { Apps, Configure, LinkPrevious } from 'grommet-icons';
+import { Projects, Configure, LinkPrevious, LinkNext } from 'grommet-icons';
 import Link from 'next/link';
 
 const data = [
@@ -20,12 +20,15 @@ export function ContentWindowProjects() {
       <List data={data}>
         {(datum) => (
           <Box direction='row' gap='small' justify='between' align='center'>
-            <Apps />
+            <Projects />
             <Text weight='bold'>{datum.name}</Text>
             <Text>{datum.appid}</Text>
             <Text>{datum.desc}</Text>
-            <Link href='/deviceProjectDetail'>
+            <Link href='/deviceProjectSetting'>
               <Button icon={<Configure />} />
+            </Link>
+            <Link href='/deviceProjectDetail'>
+              <Button icon={<LinkNext />} />
             </Link>
           </Box>
         )}
