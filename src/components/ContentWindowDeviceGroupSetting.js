@@ -23,7 +23,7 @@ export function ContentWindowDeviceGroupSetting() {
         <Text size='large' color='status-critical'>危险区域</Text>
         <Box direction='row' align='center' justify='between'>
           <Text color='status-critical'>警告：设备组被删除后无法恢复，请谨慎操作。</Text>
-          <Button label='设备组工程' color='status-critical' primary />
+          <Button label='删除设备组' color='status-critical' primary />
         </Box>
       </Box>
     </Box>
