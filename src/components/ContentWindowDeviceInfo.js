@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 export function ContentWindowDeviceInfo() {
   return (
-    <Box margin='small' flex overflow='auto' gap='medium'>
-      <Box direction='row' align='center' gap='small'>
+    <Box margin='small' overflow='auto'>
+      <Box direction='row' align='center' gap='small' flex={false}>
         <Link href='/deviceDevices'>
           <Button icon={<LinkPrevious />} />
         </Link>
-        <Heading margin='none'>设备管理中台 - 设备信息</Heading>
+        <Heading>设备管理中台 - 设备信息</Heading>
       </Box>
       <Table>
         <TableBody>

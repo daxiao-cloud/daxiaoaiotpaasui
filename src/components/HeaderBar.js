@@ -16,7 +16,7 @@ export function HeaderBar() {
           </Box>
         </DropButton>
         <Link href='/'>
-          <Button plain icon={<Icon.Anchor />} label='大晓AIoT PaaS平台' />
+          <Button plain icon={<Icon.Inherit />} label='大晓AIoT PaaS平台' />
         </Link>
       </Box>
       <Select options={['简体中文', 'English']} value='简体中文' />

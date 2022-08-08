@@ -1,5 +1,5 @@
 import { Box, Heading, List, Text, Button } from 'grommet';
-import { Projects, Configure, LinkPrevious, LinkNext } from 'grommet-icons';
+import { Projects, Configure, LinkPrevious, LinkNext, Add } from 'grommet-icons';
 import Link from 'next/link';
 
 const data = [
@@ -10,12 +10,15 @@ const data = [
 
 export function ContentWindowProjects() {
   return (
-    <Box margin='small' flex overflow='auto' gap='medium'>
-      <Box direction='row' align='center' gap='small'>
-        <Link href='/'>
-          <Button icon={<LinkPrevious />} />
-        </Link>
-        <Heading margin='none'>设备管理中台 - 工程</Heading>
+    <Box margin='small' flex overflow='auto'>
+      <Box direction='row' align='center' justify='between' flex={false}>
+        <Box direction='row' align='center' gap='small'>
+          <Link href='/'>
+            <Button icon={<LinkPrevious />} />
+          </Link>
+          <Heading>设备管理中台 - 工程</Heading>
+        </Box>
+        <Button primary label='添加工程' icon={<Add />} />
       </Box>
       <List data={data}>
         {(datum) => (

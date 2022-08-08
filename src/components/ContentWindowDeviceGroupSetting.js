@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 export function ContentWindowDeviceGroupSetting() {
   return (
-    <Box margin='small' flex overflow='auto' gap='medium'>
-      <Box direction='row' align='center' gap='small'>
+    <Box margin='small' overflow='auto'>
+      <Box direction='row' align='center' gap='small' flex={false}>
         <Link href='/deviceGroups'>
           <Button icon={<LinkPrevious />} />
         </Link>
-        <Heading margin='none'>设备管理中台 - 设备组设置</Heading>
+        <Heading>设备管理中台 - 设备组设置</Heading>
       </Box>
       <Form>
         <FormField label='设备组名'>

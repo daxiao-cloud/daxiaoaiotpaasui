@@ -1,5 +1,5 @@
 import { Box, Heading, Button, Text, List } from 'grommet';
-import { Device, LinkPrevious, LinkNext, Configure } from 'grommet-icons';
+import { Device, LinkPrevious, LinkNext, Configure, Add } from 'grommet-icons';
 import Link from 'next/link';
 
 const data = [
@@ -10,12 +10,15 @@ const data = [
 
 export function ContentWindowDeviceGroups() {
   return (
-    <Box margin='small' flex overflow='auto' gap='medium'>
-      <Box direction='row' align='center' gap='small'>
-        <Link href='/deviceProjects'>
-          <Button icon={<LinkPrevious />} />
-        </Link>
-        <Heading margin='none'>设备管理中台 - 工程详情</Heading>
+    <Box margin='small' flex overflow='auto'>
+      <Box direction='row' align='center' justify='between' flex={false}>
+        <Box direction='row' align='center' gap='small'>
+          <Link href='/deviceProjects'>
+            <Button icon={<LinkPrevious />} />
+          </Link>
+          <Heading>设备管理中台 - 设备组</Heading>
+        </Box>
+        <Button primary label='添加设备组' icon={<Add />} />
       </Box>
       <List data={data}>
         {(datum) => (

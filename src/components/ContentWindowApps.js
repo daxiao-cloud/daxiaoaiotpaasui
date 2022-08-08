@@ -1,5 +1,5 @@
 import { Box, Heading, List, Text, Button } from 'grommet';
-import { Apps, Configure, LinkNext } from 'grommet-icons';
+import { Apps, Configure, LinkNext, Add } from 'grommet-icons';
 import Link from 'next/link';
 
 const data = [
@@ -10,8 +10,11 @@ const data = [
 
 export function ContentWindowApps() {
   return (
-    <Box margin='small' overflow='auto' gap='medium'>
-      <Heading margin='none'>设备管理中台 - 应用</Heading>
+    <Box margin='small' overflow='auto'>
+      <Box direction='row' align='center' justify='between' flex={false}>
+        <Heading>设备管理中台 - 应用</Heading>
+        <Button primary label='添加应用' icon={<Add />} />
+      </Box>
       <List data={data}>
         {(datum) => (
           <Box direction='row' gap='small' align='center'>
