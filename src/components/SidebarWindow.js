@@ -1,8 +1,8 @@
-import { Box, Anchor, Sidebar, Accordion, AccordionPanel } from 'grommet';
+import { Box, Anchor, Accordion, AccordionPanel } from 'grommet';
 
 export function SidebarWindow() {
   return (
-    <Sidebar width='medium' gap='small'>
+    <Box width='medium' gap='small' margin='small'>
       <Accordion>
         <AccordionPanel label='互联网产品'>
           <Box pad='small' gap='small'>
@@ -16,6 +16,6 @@ export function SidebarWindow() {
           </Box>
         </AccordionPanel>
       </Accordion>
-    </Sidebar>
+    </Box>
   );
 }

@@ -1,5 +1,6 @@
-import { Box, Header, Select, Menu, Text, DropButton } from 'grommet';
+import { Box, Header, Select, Menu, Button, DropButton } from 'grommet';
 import * as Icon from 'grommet-icons';
+import Link from 'next/link';
 import { SidebarWindow } from './SidebarWindow';
 
 export function HeaderBar() {
@@ -8,12 +9,15 @@ export function HeaderBar() {
       <Box direction='row' gap='small' align='center'>
         <DropButton
           dropContent={<SidebarWindow />}
-          dropProps={{ top: 'bottom' }}
+          dropAlign={{ top: 'bottom', left: 'left' }}
         >
-          <Icon.Menu />
+          <Box fill>
+            <Icon.Menu size='large' />
+          </Box>
         </DropButton>
-        <Icon.Anchor />
-        <Text size='large'>大晓AIoT PaaS平台</Text>
+        <Link href='/'>
+          <Button plain icon={<Icon.Anchor />} label='大晓AIoT PaaS平台' />
+        </Link>
       </Box>
       <Select options={['简体中文', 'English']} value='简体中文' />
       <Menu label={<Icon.User />} items={[ {label: '退出登录', icon: <Icon.Logout />, gap: 'small'} ]} />
