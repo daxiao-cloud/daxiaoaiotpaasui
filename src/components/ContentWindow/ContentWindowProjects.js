@@ -1,6 +1,7 @@
-import { Box, Heading, List, Text, Button } from 'grommet';
+import { Box, Heading, List, Text, Button, Layer, Form, FormField, TextInput, TextArea } from 'grommet';
 import { Projects, Configure, LinkPrevious, LinkNext, Add } from 'grommet-icons';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const data = [
   { name: 'testproj0', appid: '12341234', desc: '测试project0' },
@@ -9,8 +10,28 @@ const data = [
 ];
 
 export function ContentWindowProjects() {
+  const [open, setOpen] = useState();
   return (
     <Box margin='small' flex overflow='auto'>
+      {open && (
+        <Layer position='top' onClickOutside={() => setOpen(false)}>
+          <Form>
+            <Box width='medium' gap='small' margin='medium'>
+              <Heading>添加工程</Heading>
+              <FormField label='工程名'>
+                <TextInput />
+              </FormField>
+              <FormField label='工程描述'>
+                <TextArea />
+              </FormField>
+              <Box direction='row' gap='small' justify='center'>
+                <Button primary label='确定' onClick={() => setOpen(false)} />
+                <Button label='取消' onClick={() => setOpen(false)} />
+              </Box>
+            </Box>
+          </Form>
+        </Layer>
+      )}
       <Box direction='row' align='center' justify='between' flex={false}>
         <Box direction='row' align='center' gap='small'>
           <Link href='/'>
@@ -18,7 +39,7 @@ export function ContentWindowProjects() {
           </Link>
           <Heading>设备管理中台 - 工程列表</Heading>
         </Box>
-        <Button primary label='添加工程' icon={<Add />} />
+        <Button primary label='添加工程' icon={<Add />} onClick={() => setOpen(true)} />
       </Box>
       <List data={data}>
         {(datum) => (

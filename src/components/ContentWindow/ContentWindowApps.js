@@ -1,6 +1,7 @@
-import { Box, Heading, List, Text, Button } from 'grommet';
+import { Box, Heading, List, Text, Button, Layer, Form, FormField, TextInput, TextArea } from 'grommet';
 import { Apps, Configure, LinkNext, Add } from 'grommet-icons';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const data = [
   { name: 'test0', appid: '12341234', desc: '测试app0' },
@@ -9,11 +10,31 @@ const data = [
 ];
 
 export function ContentWindowApps() {
+  const [open, setOpen] = useState();
   return (
     <Box margin='small' overflow='auto'>
+      {open && (
+        <Layer position='top' onClickOutside={() => setOpen(false)}>
+          <Form>
+            <Box width='medium' gap='small' margin='medium'>
+              <Heading>添加应用</Heading>
+              <FormField label='应用名'>
+                <TextInput />
+              </FormField>
+              <FormField label='应用描述'>
+                <TextArea />
+              </FormField>
+              <Box direction='row' gap='small' justify='center'>
+                <Button primary label='确定' onClick={() => setOpen(false)} />
+                <Button label='取消' onClick={() => setOpen(false)} />
+              </Box>
+            </Box>
+          </Form>
+        </Layer>
+      )}
       <Box direction='row' align='center' justify='between' flex={false}>
         <Heading>设备管理中台 - 应用列表</Heading>
-        <Button primary label='添加应用' icon={<Add />} />
+        <Button primary label='添加应用' icon={<Add />} onClick={() => setOpen(true)} />
       </Box>
       <List data={data}>
         {(datum) => (
