@@ -17,7 +17,10 @@ export function ContentWindowApps() {
         <Layer position='top' onClickOutside={() => setOpen(false)}>
           <Form>
             <Box width='medium' gap='small' margin='medium'>
-              <Heading>添加应用</Heading>
+              <Box direction='row' align='center' gap='small'>
+                <Add size='large' />
+                <Heading>添加应用</Heading>
+              </Box>
               <FormField label='应用名'>
                 <TextInput />
               </FormField>

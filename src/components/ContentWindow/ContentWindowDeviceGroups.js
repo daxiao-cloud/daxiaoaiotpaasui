@@ -17,7 +17,10 @@ export function ContentWindowDeviceGroups() {
         <Layer position='top' onClickOutside={() => setOpen(false)}>
           <Form>
             <Box width='medium' gap='small' margin='medium'>
-              <Heading>添加设备组</Heading>
+              <Box direction='row' align='center' gap='small'>
+                <Add size='large' />
+                <Heading>添加设备组</Heading>
+              </Box>
               <FormField label='设备组名'>
                 <TextInput />
               </FormField>
