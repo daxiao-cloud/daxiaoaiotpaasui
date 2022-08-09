@@ -16,7 +16,7 @@ export function ContentWindowDeviceGroups() {
           <Link href='/deviceProjects'>
             <Button icon={<LinkPrevious />} />
           </Link>
-          <Heading>设备管理中台 - 设备组</Heading>
+          <Heading>设备管理中台 - 设备组列表</Heading>
         </Box>
         <Button primary label='添加设备组' icon={<Add />} />
       </Box>

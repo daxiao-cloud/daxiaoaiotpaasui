@@ -1,30 +1,25 @@
 import { Box, Heading, List, Text, Button } from 'grommet';
-import { Projects, Configure, LinkPrevious, LinkNext, Add } from 'grommet-icons';
+import { Apps, Configure, LinkNext, Add } from 'grommet-icons';
 import Link from 'next/link';
 
 const data = [
-  { name: 'testproj0', appid: '12341234', desc: '测试project0' },
-  { name: 'testproj1111', appid: '12341234', desc: '测试project1' },
-  { name: 'abc', appid: '12341234', desc: '测试project2' },
+  { name: 'test0', appid: '12341234', desc: '测试app0' },
+  { name: 'test11111', appid: '12341234', desc: '测试app11' },
+  { name: 'a', appid: '12341234', desc: '测试app1234' },
 ];
 
-export function ContentWindowProjects() {
+export function ContentWindowApps() {
   return (
-    <Box margin='small' flex overflow='auto'>
+    <Box margin='small' overflow='auto'>
       <Box direction='row' align='center' justify='between' flex={false}>
-        <Box direction='row' align='center' gap='small'>
-          <Link href='/'>
-            <Button icon={<LinkPrevious />} />
-          </Link>
-          <Heading>设备管理中台 - 工程</Heading>
-        </Box>
-        <Button primary label='添加工程' icon={<Add />} />
+        <Heading>设备管理中台 - 应用列表</Heading>
+        <Button primary label='添加应用' icon={<Add />} />
       </Box>
       <List data={data}>
         {(datum) => (
           <Box direction='row' gap='small' align='center'>
             <Box direction='row' gap='small' align='center' width='medium'>
-              <Projects />
+              <Apps />
               <Text weight='bold'>{datum.name}</Text>
             </Box>
             <Text>{datum.appid}</Text>
@@ -32,10 +27,10 @@ export function ContentWindowProjects() {
               <Text>{datum.desc}</Text>
             </Box>
             <Box direction='row' gap='small' align='center'>
-              <Link href='/deviceProjectSetting'>
+              <Link href='/deviceAppSetting'>
                 <Button icon={<Configure />} />
               </Link>
-              <Link href='/deviceGroups'>
+              <Link href='/deviceProjects'>
                 <Button icon={<LinkNext />} />
               </Link>
             </Box>
