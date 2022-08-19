@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Button, Form, FormField, TextArea, TextInput, Layer } from 'grommet';
+import { Box, Heading, Text, Button, Form, FormField, TextArea, TextInput, Layer, CheckBox } from 'grommet';
 import { LinkPrevious, Trash } from 'grommet-icons';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -36,6 +36,18 @@ export function ContentWindowDeviceGroupSetting() {
         </FormField>
         <FormField label='设备组描述'>
           <TextArea />
+        </FormField>
+        <FormField label='禁用'>
+          <CheckBox />
+        </FormField>
+        <FormField label='设备组ID'>
+          <TextInput value='E49A383B-C37E-1322-CEC9-74CCE97FEB0D' />
+        </FormField>
+        <FormField label='设备组Key'>
+          <TextInput value='EC36948DFBB26815585ABD5E9375D934' />
+        </FormField>
+        <FormField label='创建时间'>
+          <TextInput value='2022/8/19 17:55' />
         </FormField>
       </Form>
       <Box border={{ color: 'status-critical' }} round='xsmall' pad='small'>
